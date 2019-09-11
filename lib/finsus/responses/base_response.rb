@@ -11,7 +11,7 @@ module Finsus
       end
 
       def successful?
-        @resposne_code === NO_ERROR_CODE
+        @status_code == NO_ERROR_CODE
       end
 
       private

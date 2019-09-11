@@ -6,6 +6,7 @@ require 'finsus/api_client'
 require 'finsus/customer'
 require 'finsus/responses/base_response'
 require 'finsus/responses/register_response'
+require 'finsus/schemas/customer_schema'
 
 module Finsus
   def self.config

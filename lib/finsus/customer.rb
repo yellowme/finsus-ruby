@@ -10,7 +10,7 @@ module Finsus
         'idRol' => Finsus.id_role
       )
 
-      response = api_post(url, body, auth_headers)
+      response = api_post(url, body: body, custom_headers: auth_headers)
 
       Responses::RegisterResponse.new(response)
     end
@@ -19,23 +19,23 @@ module Finsus
       url = '/ClientDev/core/Service/updateCustomer'
       body = default_body.merge(
         'idAsociado' => customer_id,
-        'tdd' => card_number
+        'tdd' => card_number,
       )
 
-      response = api_post(url, body, auth_headers)
+      response = api_post(url, body: body, custom_headers: auth_headers)
 
       Responses::BaseResponse.new(response)
     end
 
-    private
-
     def self.validate_register_data(data)
       schema = Schemas::CustomerSchema.new
-      result = schema.call(data.to_h.symbolize_keys)
+      result = schema.call(data.to_h)
 
-      raise StandardError unless result.errors.blank?
+      raise ArgumentError, result.errors.to_h if result.failure?
 
-      result.to_h.deep_transform_keys! { |key| key.camelize(:lower) }
+      result.to_h
     end
+
+    private_class_method :validate_register_data
   end
 end

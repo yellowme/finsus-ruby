@@ -6,7 +6,7 @@ module Finsus
     module ClassMethods
       def auth_headers
         {
-          'Authorization' => token
+          'Authorization' => token,
         }
       end
 
@@ -18,14 +18,14 @@ module Finsus
         url = '/LoginTDev/core/Service/login'
         body = {
           'user' => Finsus.username,
-          'pass' => Finsus.user_password
+          'pass' => Finsus.user_password,
         }
 
-        response = api_post(url, body)
+        response = api_post(url, body: body)
         @token = response['token']
         @expires_at = Time.now + TOKEN_EXPIRATION_TIME
 
-        return @token
+        @token
       end
 
       def need_update?

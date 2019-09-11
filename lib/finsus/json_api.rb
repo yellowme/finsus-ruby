@@ -7,11 +7,11 @@ module Finsus
 
       def default_headers
         {
-          'Content-type' => 'application/json'
+          'Content-type' => 'application/json',
         }
       end
 
-      def api_post(url, body = {}, custom_headers = {})
+      def api_post(url, body: {}, custom_headers: {})
         headers = custom_headers.merge(default_headers)
         response = HTTParty.post(
           Finsus.api_base + url,

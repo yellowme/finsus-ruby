@@ -1,4 +1,3 @@
-
 Gem::Specification.new do |s|
   s.name        = 'finsus-ruby'
   s.version     = '0.1.0'
@@ -9,5 +8,5 @@ Gem::Specification.new do |s|
   s.authors     = ["Yellowme"]
   s.email       = 'hola@yellowme.mx'
   s.homepage    = 'https://rubygems.org/gems/finsus-ruby'
-  s.license      = 'MIT'
+  s.license     = 'MIT'
 end

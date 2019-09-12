@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.require_paths = ['lib','lib/finsus']
 
-  s.add_dependency 'httparty', '~> 0.17'
+  s.add_dependency 'httparty'
   s.add_dependency 'dry-validation', '~> 1.3'
 
   s.add_runtime_dependency 'json', '~> 1.8'

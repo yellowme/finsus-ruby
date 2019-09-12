@@ -7,6 +7,12 @@ require 'finsus/customer'
 require 'finsus/responses/base_response'
 require 'finsus/responses/register_response'
 require 'finsus/schemas/customer_schema'
+require 'finsus/errors/error'
+require 'finsus/errors/unathorized'
+require 'finsus/errors/core_rejection'
+require 'finsus/errors/duplicated_customer'
+require 'finsus/errors/validation'
+require 'finsus/errors/parser'
 
 module Finsus
   def self.config

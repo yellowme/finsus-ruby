@@ -3,7 +3,8 @@ module Finsus
     class BaseResponse
       NO_ERROR_CODE = '000'.freeze
 
-      attr_reader :timestamp,
+      attr_reader :status_code,
+                  :timestamp,
                   :message
 
       def initialize(raw_response = {})

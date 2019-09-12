@@ -35,8 +35,7 @@ RSpec.describe Finsus::Customer do
         allow(HTTParty).to receive(:post).and_return(TestHelpers::RAW_FAILED_UPDATE_RESPONSE)
       end
 
-      it { is_expected.to be_instance_of Finsus::Responses::BaseResponse }
-      it { expect(subject.successful?).to be_falsey }
+      it { expect { subject }.to raise_error Finsus::Errors::Error }
     end
   end
 

@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
-  s.name        = 'finsus-ruby'
-  s.version     = '0.2.0'
+  s.name        = 'finsus'
+  s.version     = '0.2.1'
   s.date        = '2019-09-11'
   s.summary     = "Ruby Bindings for Finsus API"
   s.description = "Ruby Bindings for Finsus API"
@@ -14,8 +14,8 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.require_paths = ['lib','lib/finsus']
 
-  s.add_dependency 'httparty'
-  s.add_dependency 'dry-validation'
+  s.add_dependency 'httparty', '~> 0.17'
+  s.add_dependency 'dry-validation', '~> 1.3'
 
-  s.add_runtime_dependency 'json', '>= 1.8'
+  s.add_runtime_dependency 'json', '~> 1.8'
 end

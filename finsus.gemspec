@@ -17,5 +17,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'httparty'
   s.add_dependency 'dry-validation', '~> 1.3'
 
-  s.add_runtime_dependency 'json', '~> 1.8'
+  s.add_runtime_dependency 'json', '>= 1.8', '< 3.0'
 end
